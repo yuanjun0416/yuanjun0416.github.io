@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>github使用方法</title>
+      <link href="/2022/07/10/github/"/>
+      <url>/2022/07/10/github/</url>
+      
+        <content type="html"><![CDATA[<p>本文解决的是如何使用github的方法</p><span id="more"></span><p>一、github如何更新已经上传了的文件</p><pre><code>按照下列的指令来git add .git commit -m &quot;这是注释内容&quot;git pull origin main #main在这里表示的是github的branchgit push -u origin main</code></pre><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> github </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>pytorch中可能遇到的问题</title>
       <link href="/2022/07/09/pytorch/"/>
       <url>/2022/07/09/pytorch/</url>

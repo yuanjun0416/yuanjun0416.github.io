@@ -9,8 +9,31 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>May the odds be ever in your favor</description>
-    <pubDate>Sun, 10 Jul 2022 12:57:52 GMT</pubDate>
+    <pubDate>Sun, 10 Jul 2022 14:59:54 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>github使用方法</title>
+      <link>http://example.com/2022/07/10/github/</link>
+      <guid>http://example.com/2022/07/10/github/</guid>
+      <pubDate>Sun, 10 Jul 2022 14:51:12 GMT</pubDate>
+      
+      <description>&lt;p&gt;本文解决的是如何使用github的方法&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>本文解决的是如何使用github的方法</p><span id="more"></span><p>一、github如何更新已经上传了的文件</p><pre><code>按照下列的指令来git add .git commit -m &quot;这是注释内容&quot;git pull origin main #main在这里表示的是github的branchgit push -u origin main</code></pre><hr>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/github/">github</category>
+      
+      
+      <category domain="http://example.com/tags/github/">github</category>
+      
+      
+      <comments>http://example.com/2022/07/10/github/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>pytorch中可能遇到的问题</title>
