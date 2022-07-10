@@ -214,7 +214,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/07/09/pytorch/" class="post-title-link" itemprop="url">pytorch中数据预处理的问题</a>
+            <a href="/2022/07/09/pytorch/" class="post-title-link" itemprop="url">pytorch中可能遇到的问题</a>
         </h2>
 
         <div class="post-meta">
@@ -233,7 +233,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-10 20:48:13" itemprop="dateModified" datetime="2022-07-10T20:48:13+08:00">2022-07-10</time>
+                <time title="修改时间：2022-07-10 20:57:52" itemprop="dateModified" datetime="2022-07-10T20:57:52+08:00">2022-07-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,7 +245,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/pytorch/basic/" itemprop="url" rel="index"><span itemprop="name">basic</span></a>
+                  <a href="/categories/pytorch/transform/" itemprop="url" rel="index"><span itemprop="name">transform</span></a>
                 </span>
             </span>
 
@@ -260,7 +260,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>问题一：如何理解transform.Normlize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))<br>答：前面的(0.5, 0.5, 0.5)是RGB三个通道上的均值，后面的(0.5, 0.5, 0.5)是RGB三个通道的标准差<br>    Normlize对每个通道执行一下操作：image_output &#x3D; (image_input-mean)&#x2F;std，参数mean和std分别以0.5和0.5的形式传递，这将使图像在[-1, 1]范围内归一化。<br>    例如：最小值0：image_output &#x3D; (0-0.5)&#x2F;0.5 &#x3D; -1 …<br>    ‘<br>    注意:<br>    通道顺序是RGB，用过openCV的同学应该知道openCV读出来的图像是BGR顺序。<br>    这两个tuple数据是用来对RGB图像做归一化的，比如名称Normlize所示这里都取0.5只是一个近似操作，实际上均值和方差并不是这么多，但是就这个示例而言，影响可不计</p>
+          <pre><code>代码详细链接：https://github.com/yuanjun0416/deep_learning_process.git
+</code></pre>
+<p>问题一：如何理解transform.Normlize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))</p>
+<p>答：前面的(0.5, 0.5, 0.5)是RGB三个通道上的均值，后面的(0.5, 0.5, 0.5)是RGB三个通道的标准差</p>
+<pre><code>Normlize对每个通道执行一下操作：image_output = (image_input-mean)/std，参数mean和std分别以0.5和0.5的形式传递，这将使图像在[-1, 1]范围内归一化。
+例如：最小值0：image_output = (0-0.5)/0.5 = -1 ...
+&#39;
+注意:
+通道顺序是RGB，用过openCV的同学应该知道openCV读出来的图像是BGR顺序。
+这两个tuple数据是用来对RGB图像做归一化的，比如名称Normlize所示这里都取0.5只是一个近似操作，实际上均值和方差并不是这么多，但是就这个示例而言，影响可不计
+</code></pre>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/07/09/pytorch/#more" rel="contents">
@@ -440,7 +450,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -499,7 +509,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共914字</span>
+  <span class="post-count">博客全站共919字</span>
 </div>
 
 
