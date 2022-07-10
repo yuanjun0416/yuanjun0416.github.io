@@ -22,17 +22,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="May the odds be ever in your favor">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yuanjun&#39;sBlog">
-<meta property="og:url" content="http://example.com/categories/%E4%BD%A0%E5%A5%BD/index.html">
+  <meta name="description" content="问题一：如何理解transform.Normlize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))答：前面的(0.5, 0.5, 0.5)是RGB三个通道上的均值，后面的(0.5, 0.5, 0.5)是RGB三个通道的标准差    Normlize对每个通道执行一下操作：image_output &#x3D; (image_input-mean)&#x2F;std，参数mea">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pytorch中数据预处理的问题">
+<meta property="og:url" content="http://example.com/2022/07/09/pytorch/index.html">
 <meta property="og:site_name" content="Yuanjun&#39;sBlog">
-<meta property="og:description" content="May the odds be ever in your favor">
+<meta property="og:description" content="问题一：如何理解transform.Normlize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))答：前面的(0.5, 0.5, 0.5)是RGB三个通道上的均值，后面的(0.5, 0.5, 0.5)是RGB三个通道的标准差    Normlize对每个通道执行一下操作：image_output &#x3D; (image_input-mean)&#x2F;std，参数mea">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-09T14:14:50.019Z">
+<meta property="article:modified_time" content="2022-07-10T12:48:13.878Z">
 <meta property="article:author" content="yuan jun">
+<meta property="article:tag" content="pytorch">
+<meta property="article:tag" content="trouble">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/categories/%E4%BD%A0%E5%A5%BD/">
+<link rel="canonical" href="http://example.com/2022/07/09/pytorch/">
 
 
 <script id="page-configurations">
@@ -40,12 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类: 你好 | Yuanjun'sBlog</title>
+  <title>pytorch中数据预处理的问题 | Yuanjun'sBlog</title>
   
 
 
@@ -194,51 +198,200 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">你好
-          <small>分类</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/pytorch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yuan jun">
+      <meta itemprop="description" content="May the odds be ever in your favor">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanjun'sBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          pytorch中数据预处理的问题
+        </h1>
+
+        <div class="post-meta">
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-09 22:14:50" itemprop="dateCreated datePublished" datetime="2022-07-09T22:14:50+08:00">2022-07-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-10 20:48:13" itemprop="dateModified" datetime="2022-07-10T20:48:13+08:00">2022-07-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/pytorch/" itemprop="url" rel="index"><span itemprop="name">pytorch</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/pytorch/basic/" itemprop="url" rel="index"><span itemprop="name">basic</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <p>问题一：如何理解transform.Normlize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))<br>答：前面的(0.5, 0.5, 0.5)是RGB三个通道上的均值，后面的(0.5, 0.5, 0.5)是RGB三个通道的标准差<br>    Normlize对每个通道执行一下操作：image_output &#x3D; (image_input-mean)&#x2F;std，参数mean和std分别以0.5和0.5的形式传递，这将使图像在[-1, 1]范围内归一化。<br>    例如：最小值0：image_output &#x3D; (0-0.5)&#x2F;0.5 &#x3D; -1 …<br>    ‘<br>    注意:<br>    通道顺序是RGB，用过openCV的同学应该知道openCV读出来的图像是BGR顺序。<br>    这两个tuple数据是用来对RGB图像做归一化的，比如名称Normlize所示这里都取0.5只是一个近似操作，实际上均值和方差并不是这么多，但是就这个示例而言，影响可不计</p>
+<span id="more"></span>
+<pre><code>精确值是通过分别计算R、G、B三个通道的数据算出来的，
+比如由两张图片，都是100*100大小的，R：那么两图片的像素点共有2*100*100=20000个，那么这两张图片的
+1. mean求法：
+mean_R: 这20000个像素点的R值加起来，除以像素点的总数，这里是20000；mean_G 和mean_B 两个通道的计算方法一样的。
+2. std求法：
+首先标准差就是开了方的方差，所以其实就是求方差，方差公式就是我们数学上的那个求方差的公式：
+也是3个通道分开算比如算R通道的， 这里X就为20000个像素点各自的R值，再减去R均值，上面已经算好了；
+然后平方；然后20000个像素点相加，然后求平均除以20000，得到R的方差，再开方得标准差。
+
+注意！！！
+如果你用的是自己创建的数据集，从头训练，那最好还是要自己统计自己数据集的这两个量
+
+你加载的的是pytorch上的预训练模型，自己只是微调模型；
+或者你用了常见的数据集比如VOC或者COCO之类的，但是用的是自己的网络结构，即pytorch上没有可选的预训练模型那么可以使用一个pytorch上给的通用的统计值：
+mean=[0.485, 0.456, 0.406],std=[0.229, 0.224, 0.225]),即
+transform.Normlize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
+&#39;
+</code></pre>
+<p>问题二：如何理解 predict_y &#x3D; torch.max(outputs, dim&#x3D;1)[1]中的含义<br>答：我们将此代码拆分一下 preidct &#x3D; torch.max(outputs, dim&#x3D;1) + predict_y &#x3D; preidct[1]<br>    我们先简单看下列的代码<br>    import torch<br>    x &#x3D; torch.rand([2, 4])<br>    y &#x3D; torch.max(x, dim&#x3D;1)[1]</p>
+<pre><code>output:
+tensor([[0.4051, 0.1194, 0.7286, 0.8642, 0.5800, 0.0584, 0.2084, 0.4634, 0.3979,
+     0.6835],
+    [0.1506, 0.6964, 0.6613, 0.9141, 0.9811, 0.8798, 0.3690, 0.7334, 0.3589,
+     0.5195]])
+tensor([3, 4]) 
+很明显x的最大值的索引下标分别是第一行的3，即0.8642，第二行的是4，即0.9811
+
+import torch
+x = torch.rand([2, 4])
+y = torch.max(x, dim=1)
+
+output:(由于x是随机赋值的，所以最大值的地方不一样)
+tensor([[0.2006, 0.0117, 0.6692, 0.8162, 0.5893, 0.5370, 0.1080, 0.8149, 0.1185,
+     0.2816],
+    [0.8734, 0.2172, 0.9733, 0.4813, 0.1112, 0.7972, 0.3073, 0.3147, 0.3988,
+     0.3342]])
+torch.return_types.max(
+values=tensor([0.8162, 0.9733]),
+indices=tensor([3, 2]))
+很明显 y[1] = tensor([3, 2])
+</code></pre>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-07-09T22:14:50+08:00"
-              content="2022-07-09">
-          07-09
-        </time>
+    
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
       </div>
+    
+        
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/07/09/m/" itemprop="url">
-            <span itemprop="name">你好</span>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>yuan jun
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/07/09/pytorch/" title="pytorch中数据预处理的问题">http://example.com/2022/07/09/pytorch/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
 
+            <span class="label">RSS</span>
+          </a>
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/pytorch/" rel="tag"># pytorch</a>
+              <a href="/tags/trouble/" rel="tag"># trouble</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/09/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -313,13 +466,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -378,7 +531,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共77字</span>
+  <span class="post-count">博客全站共914字</span>
 </div>
 
 
