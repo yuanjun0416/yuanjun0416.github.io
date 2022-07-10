@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>pytorch中可能遇到的问题</title>
+      <link href="/2022/07/10/pytorch_fun/"/>
+      <url>/2022/07/10/pytorch_fun/</url>
+      
+        <content type="html"><![CDATA[<h2 id="pytorch中item-的用法"><a href="#pytorch中item-的用法" class="headerlink" title="pytorch中item()的用法"></a>pytorch中item()的用法</h2><pre><code>**item()是得到一个元素张量里的元素值**如下面的代码示例：accuracy = torch.eq(predict_y, test_label).sum().item()/test_label.size(0) #item()是得到元素张量里的元素值代码GitHub地址：https://github.com/yuanjun0416/deep_learning_process/Test1_official_demo.git</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> pytorch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> pytorch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>github使用方法</title>
       <link href="/2022/07/10/github/"/>
       <url>/2022/07/10/github/</url>
       
-        <content type="html"><![CDATA[<p>本文解决的是如何使用github的方法</p><span id="more"></span><p>一、github如何更新已经上传了的文件</p><pre><code>按照下列的指令来git add .git commit -m &quot;这是注释内容&quot;git pull origin main #main在这里表示的是github的branchgit push -u origin main</code></pre><hr>]]></content>
+        <content type="html"><![CDATA[<p>本文解决的是如何使用github的方法</p><span id="more"></span><h2 id="一、github如何更新已经上传了的文件"><a href="#一、github如何更新已经上传了的文件" class="headerlink" title="一、github如何更新已经上传了的文件"></a>一、github如何更新已经上传了的文件</h2><pre><code>按照下列的指令来git add .git commit -m &quot;这是注释内容&quot;git pull origin main #main在这里表示的是github的branchgit push -u origin main</code></pre><hr>]]></content>
       
       
       <categories>
@@ -33,14 +58,14 @@
       <link href="/2022/07/09/pytorch/"/>
       <url>/2022/07/09/pytorch/</url>
       
-        <content type="html"><![CDATA[<pre><code>代码详细链接：https://github.com/yuanjun0416/deep_learning_process.git</code></pre><p>问题一：如何理解transform.Normlize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))</p><p>答：前面的(0.5, 0.5, 0.5)是RGB三个通道上的均值，后面的(0.5, 0.5, 0.5)是RGB三个通道的标准差</p><pre><code>Normlize对每个通道执行一下操作：image_output = (image_input-mean)/std，参数mean和std分别以0.5和0.5的形式传递，这将使图像在[-1, 1]范围内归一化。例如：最小值0：image_output = (0-0.5)/0.5 = -1 ...&#39;注意:通道顺序是RGB，用过openCV的同学应该知道openCV读出来的图像是BGR顺序。这两个tuple数据是用来对RGB图像做归一化的，比如名称Normlize所示这里都取0.5只是一个近似操作，实际上均值和方差并不是这么多，但是就这个示例而言，影响可不计</code></pre><span id="more"></span><pre><code>精确值是通过分别计算R、G、B三个通道的数据算出来的，比如由两张图片，都是100*100大小的，R：那么两图片的像素点共有2*100*100=20000个，那么这两张图片的1. mean求法：mean_R: 这20000个像素点的R值加起来，除以像素点的总数，这里是20000；mean_G 和mean_B 两个通道的计算方法一样的。2. std求法：首先标准差就是开了方的方差，所以其实就是求方差，方差公式就是我们数学上的那个求方差的公式：也是3个通道分开算比如算R通道的， 这里X就为20000个像素点各自的R值，再减去R均值，上面已经算好了；然后平方；然后20000个像素点相加，然后求平均除以20000，得到R的方差，再开方得标准差。注意！！！如果你用的是自己创建的数据集，从头训练，那最好还是要自己统计自己数据集的这两个量你加载的的是pytorch上的预训练模型，自己只是微调模型；或者你用了常见的数据集比如VOC或者COCO之类的，但是用的是自己的网络结构，即pytorch上没有可选的预训练模型那么可以使用一个pytorch上给的通用的统计值：mean=[0.485, 0.456, 0.406],std=[0.229, 0.224, 0.225]),即transform.Normlize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))&#39;</code></pre><p>问题二：如何理解 predict_y &#x3D; torch.max(outputs, dim&#x3D;1)[1]中的含义</p><p>答：我们将此代码拆分一下 preidct &#x3D; torch.max(outputs, dim&#x3D;1) + predict_y &#x3D; preidct[1]</p><pre><code>我们先简单看下列的代码import torchx = torch.rand([2, 4])y = torch.max(x, dim=1)[1]output:tensor([[0.4051, 0.1194, 0.7286, 0.8642, 0.5800, 0.0584, 0.2084, 0.4634, 0.3979,     0.6835],    [0.1506, 0.6964, 0.6613, 0.9141, 0.9811, 0.8798, 0.3690, 0.7334, 0.3589,     0.5195]])tensor([3, 4]) 很明显x的最大值的索引下标分别是第一行的3，即0.8642，第二行的是4，即0.9811import torchx = torch.rand([2, 4])y = torch.max(x, dim=1)output:(由于x是随机赋值的，所以最大值的地方不一样)tensor([[0.2006, 0.0117, 0.6692, 0.8162, 0.5893, 0.5370, 0.1080, 0.8149, 0.1185,     0.2816],    [0.8734, 0.2172, 0.9733, 0.4813, 0.1112, 0.7972, 0.3073, 0.3147, 0.3988,     0.3342]])torch.return_types.max(values=tensor([0.8162, 0.9733]),indices=tensor([3, 2]))很明显 y[1] = tensor([3, 2])</code></pre>]]></content>
+        <content type="html"><![CDATA[<pre><code>代码详细链接：https://github.com/yuanjun0416/deep_learning_process/Test1_official_demo.git</code></pre><h2 id="问题一：如何理解transform-Normlize-0-5-0-5-0-5-0-5-0-5-0-5"><a href="#问题一：如何理解transform-Normlize-0-5-0-5-0-5-0-5-0-5-0-5" class="headerlink" title="问题一：如何理解transform.Normlize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))"></a>问题一：如何理解transform.Normlize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))</h2><p>答：前面的(0.5, 0.5, 0.5)是RGB三个通道上的均值，后面的(0.5, 0.5, 0.5)是RGB三个通道的标准差</p><pre><code>Normlize对每个通道执行一下操作：image_output = (image_input-mean)/std，参数mean和std分别以0.5和0.5的形式传递，这将使图像在[-1, 1]范围内归一化。例如：最小值0：image_output = (0-0.5)/0.5 = -1 ...&#39;注意:通道顺序是RGB，用过openCV的同学应该知道openCV读出来的图像是BGR顺序。这两个tuple数据是用来对RGB图像做归一化的，比如名称Normlize所示这里都取0.5只是一个近似操作，实际上均值和方差并不是这么多，但是就这个示例而言，影响可不计</code></pre><span id="more"></span><pre><code>精确值是通过分别计算R、G、B三个通道的数据算出来的，比如由两张图片，都是100*100大小的，R：那么两图片的像素点共有2*100*100=20000个，那么这两张图片的1. mean求法：mean_R: 这20000个像素点的R值加起来，除以像素点的总数，这里是20000；mean_G 和mean_B 两个通道的计算方法一样的。2. std求法：首先标准差就是开了方的方差，所以其实就是求方差，方差公式就是我们数学上的那个求方差的公式：也是3个通道分开算比如算R通道的， 这里X就为20000个像素点各自的R值，再减去R均值，上面已经算好了；然后平方；然后20000个像素点相加，然后求平均除以20000，得到R的方差，再开方得标准差。注意！！！如果你用的是自己创建的数据集，从头训练，那最好还是要自己统计自己数据集的这两个量你加载的的是pytorch上的预训练模型，自己只是微调模型；或者你用了常见的数据集比如VOC或者COCO之类的，但是用的是自己的网络结构，即pytorch上没有可选的预训练模型那么可以使用一个pytorch上给的通用的统计值：mean=[0.485, 0.456, 0.406],std=[0.229, 0.224, 0.225]),即transform.Normlize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))&#39;</code></pre><h2 id="问题二：如何理解-predict-y-x3D-torch-max-outputs-dim-x3D-1-1-中的含义"><a href="#问题二：如何理解-predict-y-x3D-torch-max-outputs-dim-x3D-1-1-中的含义" class="headerlink" title="问题二：如何理解 predict_y &#x3D; torch.max(outputs, dim&#x3D;1)[1]中的含义"></a>问题二：如何理解 predict_y &#x3D; torch.max(outputs, dim&#x3D;1)[1]中的含义</h2><p>答：我们将此代码拆分一下 preidct &#x3D; torch.max(outputs, dim&#x3D;1) + predict_y &#x3D; preidct[1]</p><pre><code>我们先简单看下列的代码import torchx = torch.rand([2, 4])y = torch.max(x, dim=1)[1]output:tensor([[0.4051, 0.1194, 0.7286, 0.8642, 0.5800, 0.0584, 0.2084, 0.4634, 0.3979,     0.6835],    [0.1506, 0.6964, 0.6613, 0.9141, 0.9811, 0.8798, 0.3690, 0.7334, 0.3589,     0.5195]])tensor([3, 4]) 很明显x的最大值的索引下标分别是第一行的3，即0.8642，第二行的是4，即0.9811import torchx = torch.rand([2, 4])y = torch.max(x, dim=1)output:(由于x是随机赋值的，所以最大值的地方不一样)tensor([[0.2006, 0.0117, 0.6692, 0.8162, 0.5893, 0.5370, 0.1080, 0.8149, 0.1185,     0.2816],    [0.8734, 0.2172, 0.9733, 0.4813, 0.1112, 0.7972, 0.3073, 0.3147, 0.3988,     0.3342]])torch.return_types.max(values=tensor([0.8162, 0.9733]),indices=tensor([3, 2]))很明显 y[1] = tensor([3, 2])</code></pre>]]></content>
       
       
       <categories>
           
           <category> pytorch </category>
           
-          <category> transform </category>
+          <category> Test1_official_demo </category>
           
       </categories>
       
