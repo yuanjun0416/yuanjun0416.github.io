@@ -45,7 +45,7 @@
       
       
       
-      <content:encoded><![CDATA[<p>本文解决的是如何使用github的方法</p><span id="more"></span><h2 id="一、github如何更新已经上传了的文件"><a href="#一、github如何更新已经上传了的文件" class="headerlink" title="一、github如何更新已经上传了的文件"></a>一、github如何更新已经上传了的文件</h2><pre><code>按照下列的指令来git add .git commit -m &quot;这是注释内容&quot;git pull origin main #main在这里表示的是github的branchgit push -u origin main</code></pre><hr>]]></content:encoded>
+      <content:encoded><![CDATA[<p>本文解决的是如何使用github的方法</p><span id="more"></span><h2 id="一、github如何更新已经上传了的文件"><a href="#一、github如何更新已经上传了的文件" class="headerlink" title="一、github如何更新已经上传了的文件"></a>一、github如何更新已经上传了的文件</h2><pre><code>按照下列的指令来git add .git commit -m &quot;这是注释内容&quot;git pull origin main #main在这里表示的是github的branchgit push -u origin main</code></pre><hr><h2 id="二、github如何上传文件"><a href="#二、github如何上传文件" class="headerlink" title="二、github如何上传文件"></a>二、github如何上传文件</h2><pre><code>按照下列的指令来git initgit add .git branch main -Mgit remote add origin git@github.com:yuanjun0416/deep_learning_processing.gitgit commit -m &quot;注释内容（此处写本次干了什么事）&quot;git push -u origin main</code></pre>]]></content:encoded>
       
       
       <category domain="http://example.com/categories/github/">github</category>
