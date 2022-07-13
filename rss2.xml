@@ -9,8 +9,31 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>May the odds be ever in your favor</description>
-    <pubDate>Sun, 10 Jul 2022 15:51:19 GMT</pubDate>
+    <pubDate>Wed, 13 Jul 2022 09:11:24 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>blog使用简介</title>
+      <link>http://example.com/2022/07/13/blog_use/</link>
+      <guid>http://example.com/2022/07/13/blog_use/</guid>
+      <pubDate>Wed, 13 Jul 2022 09:09:22 GMT</pubDate>
+      
+      <description>&lt;p&gt;本文解决的是如何使用blog的方法&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>本文解决的是如何使用blog的方法</p><span id="more"></span><h2 id="一、更新blog"><a href="#一、更新blog" class="headerlink" title="一、更新blog"></a>一、更新blog</h2><pre><code>按照下列的指令来hexo cleanhexo ghexo d</code></pre>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/blog/">blog</category>
+      
+      
+      <category domain="http://example.com/tags/blog/">blog</category>
+      
+      
+      <comments>http://example.com/2022/07/13/blog_use/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>pytorch的一些函数的运用</title>
