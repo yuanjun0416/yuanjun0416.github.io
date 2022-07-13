@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>pytorch的一些函数的运用</title>
+      <link href="/2022/07/13/pytorch_data_util/"/>
+      <url>/2022/07/13/pytorch_data_util/</url>
+      
+        <content type="html"><![CDATA[<p>本文介绍的是一些关于pytorch中VOC的数据的处理</p><span id="more"></span><hr><h2 id="一-图片是网上爬虫下载下来的，但是已经对图片标注了，对JPEGImgae和Annotation进行相应的重命名"><a href="#一-图片是网上爬虫下载下来的，但是已经对图片标注了，对JPEGImgae和Annotation进行相应的重命名" class="headerlink" title="一.图片是网上爬虫下载下来的，但是已经对图片标注了，对JPEGImgae和Annotation进行相应的重命名"></a>一.图片是网上爬虫下载下来的，但是已经对图片标注了，对JPEGImgae和Annotation进行相应的重命名</h2><pre><code>github:https://github.com/yuanjun0416/pytorch_basic_operation/blob/main/VOC_data_processing/rename_data.py</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> pytorch </category>
+          
+          <category> VOC_data_util </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> pytorch </tag>
+            
+            <tag> VOC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>blog使用简介</title>
       <link href="/2022/07/13/blog_use/"/>
       <url>/2022/07/13/blog_use/</url>
