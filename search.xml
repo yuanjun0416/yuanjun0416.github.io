@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>pytorch的一些函数的运用</title>
+      <title>pytorch的VOC_data处理代码</title>
       <link href="/2022/07/13/pytorch_data_util/"/>
       <url>/2022/07/13/pytorch_data_util/</url>
       
@@ -62,7 +62,7 @@
       <link href="/2022/07/10/pytorch_fun/"/>
       <url>/2022/07/10/pytorch_fun/</url>
       
-        <content type="html"><![CDATA[<p>本文介绍的是一些关于pytorch中最基本的一些函数运用</p><span id="more"></span><h2 id="pytorch中item-的用法"><a href="#pytorch中item-的用法" class="headerlink" title="pytorch中item()的用法"></a>pytorch中item()的用法</h2><pre><code>**item()是得到一个元素张量里的元素值**如下面的代码示例：accuracy = torch.eq(predict_y, test_label).sum().item()/test_label.size(0) #item()是得到元素张量里的元素值代码GitHub地址：https://github.com/yuanjun0416/deep_learning_process/Test1_official_demo.git</code></pre>]]></content>
+        <content type="html"><![CDATA[<p>本文介绍的是一些关于pytorch中最基本的一些函数运用</p><span id="more"></span><h2 id="pytorch中item-的用法"><a href="#pytorch中item-的用法" class="headerlink" title="pytorch中item()的用法"></a>pytorch中item()的用法</h2><pre><code>item()是得到一个元素张量里的元素值如下面的代码示例：accuracy = torch.eq(predict_y, test_label).sum().item()/test_label.size(0) #item()是得到元素张量里的元素值代码GitHub地址：https://github.com/yuanjun0416/deep_learning_process/Test1_official_demo.git</code></pre><h2 id="pytorch中torchvision-is-tracing-的使用简介"><a href="#pytorch中torchvision-is-tracing-的使用简介" class="headerlink" title="pytorch中torchvision._is_tracing()的使用简介"></a>pytorch中torchvision._is_tracing()的使用简介</h2><pre><code>github:https://github.com/yuanjun0416/deep-learning-for-image-processing/blob/master/pytorch_object_detection/faster_rcnn/network_files/transform.pypage:108这是对 torch._C._get_tracing_state() 的内部调用，用于检查您当前是否正在尝试使用 JIT 跟踪模型。它在内部用于例如 对当前不支持跟踪的方法使用变通方法。</code></pre>]]></content>
       
       
       <categories>
