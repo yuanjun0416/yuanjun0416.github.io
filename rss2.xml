@@ -9,8 +9,33 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>May the odds be ever in your favor</description>
-    <pubDate>Mon, 18 Jul 2022 00:35:09 GMT</pubDate>
+    <pubDate>Mon, 18 Jul 2022 02:31:34 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>python一些库的安装步骤</title>
+      <link>http://example.com/2022/07/18/python_pip_install/</link>
+      <guid>http://example.com/2022/07/18/python_pip_install/</guid>
+      <pubDate>Mon, 18 Jul 2022 01:49:50 GMT</pubDate>
+      
+      <description>&lt;p&gt;本文blog解决的是如何使用blog的方法&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>本文blog解决的是如何使用blog的方法</p><span id="more"></span><h2 id="python3-8-安装-lxml"><a href="#python3-8-安装-lxml" class="headerlink" title="python3.8 安装 lxml"></a>python3.8 安装 lxml</h2><p>1.下载lxml, 注意版本相对应</p><p>网址：<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml" title="lxml网址">https://www.lfd.uci.edu/~gohlke&#x2F;pythonlibs&#x2F;#lxml</a></p><p>windows 64位系统， 安装是python3.8，下载的lxml文件就是这个</p><p><img src="/./images/python_pip_install/python_pip_install_2.jpg" alt="avatar"></p><p>2.cmd命令下， 输入pip install wheel</p><p>3.找到已经下载好lxml文件所在的文件夹，G:\</p><p><img src="/./images/python_pip_install/python_pip_install_3.jpg" alt="avatar"></p><p>cmd命令进入该文件</p><p>cmd命令：</p><pre><code>pip install lxml-4.9.0-cp38-cp38-win_amd64.whl</code></pre><p><img src="/./images/python_pip_install/python_pip_install_1.jpg" alt="avatar"></p>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/python/">python</category>
+      
+      
+      <category domain="http://example.com/tags/python/">python</category>
+      
+      <category domain="http://example.com/tags/pip/">pip</category>
+      
+      
+      <comments>http://example.com/2022/07/18/python_pip_install/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>pytorch的VOC_data处理代码</title>
