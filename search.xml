@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>数剧集的预处理</title>
+      <link href="/2022/07/19/data_util/"/>
+      <url>/2022/07/19/data_util/</url>
+      
+        <content type="html"><![CDATA[<p>本文介绍的是一些关于数据集的处理</p><span id="more"></span><hr><h2 id="如何解压tar或者tar-gz压缩文件"><a href="#如何解压tar或者tar-gz压缩文件" class="headerlink" title="如何解压tar或者tar.gz压缩文件"></a>如何解压tar或者tar.gz压缩文件</h2><ul><li><p>tar压缩文件</p><p>  tar -xzvf ***.tar (win or linux: Git Bash)</p><p>  or</p><p>  7zip (win: 7zip; 360zip)</p></li><li><p>tar.gz压缩文件 </p><p>  tar -xzvf ***.tar.gz (win or linux: Git Bash)</p><p>  7zip (win: 7zip; 360zip)</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> pytorch </category>
+          
+          <category> data_util </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> pytorch </tag>
+            
+            <tag> data_util </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python一些库的安装步骤</title>
       <link href="/2022/07/18/python_pip_install/"/>
       <url>/2022/07/18/python_pip_install/</url>
@@ -32,10 +61,10 @@
     
     <entry>
       <title>pytorch的VOC_data处理代码</title>
-      <link href="/2022/07/13/pytorch_data_util/"/>
-      <url>/2022/07/13/pytorch_data_util/</url>
+      <link href="/2022/07/13/pytorch_VOC_data/"/>
+      <url>/2022/07/13/pytorch_VOC_data/</url>
       
-        <content type="html"><![CDATA[<p>本文介绍的是一些关于pytorch中VOC的数据的处理</p><span id="more"></span><hr><h2 id="图片是网上爬虫下载下来的，但是已经对图片标注了，对JPEGImgae和Annotation进行相应的重命名"><a href="#图片是网上爬虫下载下来的，但是已经对图片标注了，对JPEGImgae和Annotation进行相应的重命名" class="headerlink" title="图片是网上爬虫下载下来的，但是已经对图片标注了，对JPEGImgae和Annotation进行相应的重命名"></a>图片是网上爬虫下载下来的，但是已经对图片标注了，对JPEGImgae和Annotation进行相应的重命名</h2><pre><code>github代码:https://github.com/yuanjun0416/pytorch_basic_operation/blob/main/VOC_data_processing/rename_data.py</code></pre><hr><h2 id="是对上面一的补充，由于网上爬虫的图片和标注过的信息经过rename-data-py后，annotation中的filename和path还未改变，需对其进行重写"><a href="#是对上面一的补充，由于网上爬虫的图片和标注过的信息经过rename-data-py后，annotation中的filename和path还未改变，需对其进行重写" class="headerlink" title="是对上面一的补充，由于网上爬虫的图片和标注过的信息经过rename_data.py后，annotation中的filename和path还未改变，需对其进行重写"></a>是对上面一的补充，由于网上爬虫的图片和标注过的信息经过rename_data.py后，annotation中的filename和path还未改变，需对其进行重写</h2><pre><code>github代码：https://github.com/yuanjun0416/pytorch_basic_operation/blob/main/VOC_data_processing/rename_data_xml.py</code></pre><h2 id="将VOC数据集的文件，划分训练集、验证集，本代码是将VOC（JPEGImages、Annotations）数据集划分到train-txt和val-txt，具体的默认比例是0-5，可以自行修改"><a href="#将VOC数据集的文件，划分训练集、验证集，本代码是将VOC（JPEGImages、Annotations）数据集划分到train-txt和val-txt，具体的默认比例是0-5，可以自行修改" class="headerlink" title="将VOC数据集的文件，划分训练集、验证集，本代码是将VOC（JPEGImages、Annotations）数据集划分到train.txt和val.txt，具体的默认比例是0.5，可以自行修改"></a>将VOC数据集的文件，划分训练集、验证集，本代码是将VOC（JPEGImages、Annotations）数据集划分到train.txt和val.txt，具体的默认比例是0.5，可以自行修改</h2><pre><code>github代码：https://github.com/yuanjun0416/pytorch_basic_operation/blob/main/VOC_data_processing/split_data.py</code></pre>]]></content>
+        <content type="html"><![CDATA[<p>本文介绍的是一些关于pytorch中VOC的数据的处理</p><span id="more"></span><hr><h2 id="图片是网上爬虫下载下来的，但是已经对图片标注了，对JPEGImgae和Annotation进行相应的重命名"><a href="#图片是网上爬虫下载下来的，但是已经对图片标注了，对JPEGImgae和Annotation进行相应的重命名" class="headerlink" title="图片是网上爬虫下载下来的，但是已经对图片标注了，对JPEGImgae和Annotation进行相应的重命名"></a>图片是网上爬虫下载下来的，但是已经对图片标注了，对JPEGImgae和Annotation进行相应的重命名</h2><pre><code>github代码:https://github.com/yuanjun0416/pytorch_basic_operation/blob/main/VOC_data_processing/rename_data.py</code></pre><hr><h2 id="是对上面一的补充，由于网上爬虫的图片和标注过的信息经过rename-data-py后，annotation中的filename和path还未改变，需对其进行重写"><a href="#是对上面一的补充，由于网上爬虫的图片和标注过的信息经过rename-data-py后，annotation中的filename和path还未改变，需对其进行重写" class="headerlink" title="是对上面一的补充，由于网上爬虫的图片和标注过的信息经过rename_data.py后，annotation中的filename和path还未改变，需对其进行重写"></a>是对上面一的补充，由于网上爬虫的图片和标注过的信息经过rename_data.py后，annotation中的filename和path还未改变，需对其进行重写</h2><pre><code>github代码：https://github.com/yuanjun0416/pytorch_basic_operation/blob/main/VOC_data_processing/rename_data_xml.py</code></pre><hr><h2 id="将VOC数据集的文件，划分训练集、验证集，本代码是将VOC（JPEGImages、Annotations）数据集划分到train-txt和val-txt，具体的默认比例是0-5，可以自行修改"><a href="#将VOC数据集的文件，划分训练集、验证集，本代码是将VOC（JPEGImages、Annotations）数据集划分到train-txt和val-txt，具体的默认比例是0-5，可以自行修改" class="headerlink" title="将VOC数据集的文件，划分训练集、验证集，本代码是将VOC（JPEGImages、Annotations）数据集划分到train.txt和val.txt，具体的默认比例是0.5，可以自行修改"></a>将VOC数据集的文件，划分训练集、验证集，本代码是将VOC（JPEGImages、Annotations）数据集划分到train.txt和val.txt，具体的默认比例是0.5，可以自行修改</h2><pre><code>github代码：https://github.com/yuanjun0416/pytorch_basic_operation/blob/main/VOC_data_processing/split_data.py</code></pre>]]></content>
       
       
       <categories>
